@@ -3,6 +3,7 @@
 #echo 1 > README.md
 git add .
 git rm a.php b.php
+git rm *~
 #git rm .
 git commit -m "init"
 # 上傳至遠端
