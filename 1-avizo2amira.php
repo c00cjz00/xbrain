@@ -19,7 +19,7 @@ if (substr($tmpFile,-6,6)==".am.gz") {
   $cmd="gunzip -c ".$tmpFile." > ".$neuronFileA;
   exec($cmd);
  }
-}elsif (substr($tmpFile,-3,3)==".am") {
+}elseif (substr($tmpFile,-3,3)==".am") {
  $neuronFileA=$tmpFile;
 }else{
  echo "enter right neuronFile\n"; exit();
