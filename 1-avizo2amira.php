@@ -1,6 +1,6 @@
 <?php
 ########### cmd ############
-//php 1-avzio2amira.php [neuron.gz/neuron]
+//php 1-avizo2amira.php [neuron.gz/neuron]
 
 ########### configure ############
 $amiraBin="/package/Amira/6.2.0/bin/start";
