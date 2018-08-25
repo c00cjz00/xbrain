@@ -1,6 +1,10 @@
 <?php
+########### cmd ############
+//php 1-avzio2amira.php [neuron.gz/neuron]
+
 ########### configure ############
 $amiraBin="/package/Amira/6.2.0/bin/start";
+$resize=4;
 
 ###########  amiraHX  ############
 $script="";
@@ -9,20 +13,25 @@ if (!isset($argv[1])) {
 } else {
  $tmpFile=realpath($argv[1]);
 }
-if (substr($tmpFile,-3,3)==".gz") {
+if (substr($tmpFile,-6,6)==".am.gz") {
  $neuronFileA=substr($tmpFile,0,-3);
  if (!is_file($neuronFileA)){
   $cmd="gunzip -c ".$tmpFile." > ".$neuronFileA;
   exec($cmd);
  }
-
- $neuronFileB=substr($neuronFileA,0,-3).".4_4_4.am";
- if (!is_file($neuronFileB) && is_file($neuronFileA)){
-  $script.="
-avizo2amira \"$neuronFileA\" \"$neuronFileB\"
-  ";
- }
+}elsif (substr($tmpFile,-3,3)==".am") {
+ $neuronFileA=$tmpFile;
+}else{
+ echo "enter right neuronFile\n"; exit();
 }
+
+$neuronFileB=substr($neuronFileA,0,-3)."_".$resize."_".$resize."_".$resize.".am";
+if (!is_file($neuronFileB) && is_file($neuronFileA)){
+ $script.="
+  avizo2amira \"$neuronFileA\" \"$neuronFileB\"
+ ";
+}
+
 
 if ($script!=""){
  $amiraHx="# Amira Script
