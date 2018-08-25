@@ -5,6 +5,8 @@ rm rm */*/*/*~
 #git cloen ...
 #cd r1
 #echo 1 > README.md
+git checkout master
+
 git add *
 git rm -r step1-avizo2amira2
 git commit -m "init"
