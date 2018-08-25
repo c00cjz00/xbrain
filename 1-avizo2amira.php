@@ -25,7 +25,7 @@ if (substr($tmpFile,-6,6)==".am.gz") {
  echo "enter right neuronFile\n"; exit();
 }
 
-$neuronFileB=substr($neuronFileA,0,-3)."_".$resize."_".$resize."_".$resize.".am";
+$neuronFileB=substr($neuronFileA,0,-3).".".$resize."_".$resize."_".$resize.".am";
 if (!is_file($neuronFileB) && is_file($neuronFileA)){
  $script.="
   avizo2amira \"$neuronFileA\" \"$neuronFileB\"
