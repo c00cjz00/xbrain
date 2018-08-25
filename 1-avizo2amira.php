@@ -62,5 +62,5 @@ if ($script!=""){
  $prgfile_hx = tempnam("/tmp", "warping_"); $fp = fopen($prgfile_hx, "w"); fwrite($fp, $amiraHx); fclose($fp);
  exec("vglrun ".$amiraBin." -no_gui ".$prgfile_hx);
  unlink($prgfile_hx);
- exec("rm ".$neuronFileA);
+ //exec("rm ".$neuronFileA);
 }
