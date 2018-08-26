@@ -14,6 +14,10 @@ git commit -m "init"
 git push origin master
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3827a70eacc9ec3d992139084c829f18c28bef82
 ## In the command-line, navigate to your local repository.
 ## Ensure you are in the default branch:
 # git checkout master
@@ -22,4 +26,8 @@ git push origin master
 ## Commit the change:
 # git commit -m "Remove duplicated directory"
 ## Push the change to your remote repository:
+<<<<<<< HEAD
 # git push origin master
+=======
+# git push origin master
+>>>>>>> 3827a70eacc9ec3d992139084c829f18c28bef82
