@@ -14,10 +14,7 @@ git commit -m "init"
 git push origin master
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3827a70eacc9ec3d992139084c829f18c28bef82
 ## In the command-line, navigate to your local repository.
 ## Ensure you are in the default branch:
 # git checkout master
