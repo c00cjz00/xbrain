@@ -1,73 +1,70 @@
 <?php
-$stdFile="/disk4/script/warpXbrain/data/female/Std.am";
-$brainFile=$argv[1];
-$neuron=substr(basename($brainFile),0,-18);
-$matrix=substr($brainFile,0,-18).".matrix5";
+/*** 
+Example: 
+php 2-neuronPosition.php  
+or  
+php 2-neuronPosition.php ../../demoData/20170728_33_04_Resample_4_4_4.am 18 2 ../../demoData/Std.am
+***/
+$brainFile="../../demoData/20170728_33_04_Resample_4_4_4.am"; 
+$stdFile="../../demoData/Std.am";
+$n1=0; $n2=0; 
 
-$tmpArr=file("pngXbrain.record_demo");
+if (isset($argv[1])) $brainFile=$argv[1]; 
+if (isset($argv[2])) $n1=$argv[2]; 
+if (isset($argv[3])) $n2=$argv[3];
+if (isset($argv[4])) $stdFile=$argv[4]; 
+
+$brain=basename($brainFile,".am"); 
+$dir=dirname($brainFile);
+$matrix=$dir."/".$brain.".transformMatrix";
+if (!is_file($brainFile) || !is_file($stdFile)){
+ echo "brain or std file 不存在\n"; exit();
+}
+if (is_file($matrix)){
+ echo "已經轉換過囉\n"; 
+ echo $matrix."\n";
+ exit();
+}
+
 $rotation="";$rotation2="";
-for($i=0;$i<count($tmpArr);$i++){
- $smpArr=explode(" ",trim($tmpArr[$i]));
- if (count($smpArr)==3){
-  $n=$smpArr[0]; $n1=$smpArr[1]; $n2=$smpArr[2]; 
-
-  
-  if (($neuron==$n) && ($n1!=0) && ($n2!=0))  {
-  
-  echo $neuron." ".$n."\n";
-   if ($n2==2){
-    $degree=$n1*10;
-    if ($degree>180) {
-    $degree=180-$degree;
-    }elseif ($degree<=180) {
-    $degree=180-$degree;        
-    }
-    $rotation="brain rotate -ly 180; brain rotate -lz ".$degree.";";
-    echo $rotation."\n";
-$rotation2="    
-create HxTransformEditor TransformEditor
-TransformEditor attach brain
-brain setRotation -center 1280 1280 1280 0 1 0 180
-
-";
-    
-   }else{
-    $degree=$n1*10;
-    if ($degree>180) {
-    $degree=180-$degree;
-    }elseif ($degree<=180) {
-    $degree=180-$degree;   
-    }
-    
-    $rotation="brain rotate -lz ".$degree.";";
-    echo $rotation."\n";
-$rotation2="    
-create HxTransformEditor TransformEditor
-TransformEditor attach brain
-brain setRotation -center 1280 1280 1280 0 0 1 ".$degree."
-
-
-";
-
-
-                    
-       
-   }
-   break;
+if (($n1!=0) && ($n2!=0)) {
+ if ($n2==2){
+  $degree=$n1*10;
+  if ($degree>180) {
+   $degree=180-$degree;
+  }elseif ($degree<=180) {
+   $degree=180-$degree;        
   }
+  $rotation="brain rotate -ly 180; brain rotate -lz ".$degree.";";
+  echo $rotation."\n";
+$rotation2="    
+brain setRotation -center 1280 1280 1280 0 1 0 180
+";
+ }else{
+  $degree=$n1*10;
+  if ($degree>180) {
+   $degree=180-$degree;
+  }elseif ($degree<=180) {
+   $degree=180-$degree;   
+  }
+  $rotation="brain rotate -lz ".$degree.";";
+  echo $rotation."\n";
+$rotation2="    
+brain setRotation -center 1280 1280 1280 0 0 1 ".$degree."
+";
  }
 }
 
 
 $hx="# Amira Script
-echo 123
-echo $neuron
+echo $brain
 echo \"$rotation\"
 [ load $stdFile ] setLabel std
 [ load $brainFile ] setLabel brain
-
+create HxTransformEditor TransformEditor
+TransformEditor attach brain
 $rotation2
-[ load /disk4/script/step1-snapshotLSM/purpleLSM.am ] setLabel purpleLSM
+[ load ../../demoData/purpleLSM.am ] setLabel purpleLSM
 purpleLSM setMinMax 14000 65535
 purpleLSM fire
 create HxVolren VolrenStd
@@ -79,7 +76,7 @@ VolrenStd commonMode setState item 0 0 item 1 0
 VolrenStd shading setValue 0
 VolrenStd fire
             
-[ load /disk4/script/step1-snapshotLSM/greenLSM.am ] setLabel greenLSM
+[ load ../../demoData/greenLSM.am ] setLabel greenLSM
 greenLSM setMinMax 14000 65535
 greenLSM fire
 create HxVolren VolrenBrain
