@@ -1,0 +1,15 @@
+php snapshot.php /disk4/work/201707_output/20170801_36_01_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170728_10_07_Resample_4_4_4.am
+#php snapshot.php /disk4/work/201707_output/20170801_36_08_Resample_4_4_4.am
+#php snapshot.php /disk4/work/201707_output/20170730_55_05_Resample_4_4_4.am
+#php snapshot.php /disk4/work/201707_output/20170727_29_09_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170729_46_01_Resample_4_4_4.am
+#php snapshot.php /disk4/work/201707_output/20170801_36_06_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170801_38_08_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170803_44_07_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170726_24_10_Resample_4_4_4.am
+#php snapshot.php /disk4/work/201707_output/20170801_39_09_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170728_09_07_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170801_38_07_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170728_10_02_Resample_4_4_4.am
+php snapshot.php /disk4/work/201707_output/20170728_10_03_Resample_4_4_4.am
