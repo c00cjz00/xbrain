@@ -7,10 +7,10 @@ $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$fullBrainFile="../../demoData/20170728_33_04_Resample_4_4_4.am"; 
-$innerBrainFile="../../demoData/20170728_33_04_Resample_4_4_4_innerBrain.am"; 
-$std_fullBrainFile="../../demoData/Std_fullBrain.am";
-$std_innerBrainFile="../../demoData/Std_innerBrain.am";
+$fullBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am"; 
+$innerBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am"; 
+$std_fullBrainFile="../../demoData/stdBrain/Std_fullBrain.am";
+$std_innerBrainFile="../../demoData/stdBrain/Std_innerBrain.am";
 
 if (isset($argv[1])) $fullBrainFile=$argv[1]; 
 if (isset($argv[2])) $innerBrainFile=$argv[2]; 

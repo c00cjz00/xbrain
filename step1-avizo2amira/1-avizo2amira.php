@@ -3,7 +3,10 @@
 //php 1-avizo2amira.php [neuron.gz/neuron]
 
 ########### configure ############
-$amiraBin="/package/Amira/6.2.0/bin/start";
+## Configure ##
+$dirBin=dirname(__FILE__);
+include(dirname($dirBin)."/config.php");
+$amiraBin=$amiraBin62;
 $resize=4;
 
 ###########  amiraHX  ############

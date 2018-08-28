@@ -1,15 +1,28 @@
 <?php
+/***
+Example:
+php affineRegister.php
+or
+php affineRegister.php \
+../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am \
+../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am \
+../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.manualMatrix \
+../../demoData/stdBrain/Std_fullBrain.am \
+../../demoData/stdBrain/Std_innerBrain.am
+***/
+
+
 ## Configure ##
 $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$fullBrainFile="../../demoData/20170728_33_04_Resample_4_4_4.am"; 
-$innerBrainFile="../../demoData/20170728_33_04_Resample_4_4_4_innerBrain.am"; 
+$fullBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am"; 
+$innerBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am"; 
 $matrix_manual="";
-$matrixFile="../../demoData/20170728_33_04_Resample_4_4_4.manualMatrix"; 
-$std_fullBrainFile="../../demoData/Std_fullBrain.am";
-$std_innerBrainFile="../../demoData/Std_innerBrain.am";
+$matrixFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.manualMatrix"; 
+$std_fullBrainFile="../../demoData/stdBrain/Std_fullBrain.am";
+$std_innerBrainFile="../../demoData/stdBrain/Std_innerBrain.am";
 
 if (isset($argv[1])) $fullBrainFile=$argv[1]; 
 if (isset($argv[2])) $innerBrainFile=$argv[2]; 
@@ -30,6 +43,12 @@ $matrix_innerBrain=$saveDir."/".substr(basename($innerBrainFile),0,-3).".affineM
 
 
 ## Main script ##
+echo $std_innerBrainFile."\n";
+echo $std_fullBrainFile."\n";
+echo $innerBrainFile."\n";
+echo $fullBrainFile."\n";
+
+
 if (is_file($fullBrainFile) && is_file($innerBrainFile) && is_file($std_fullBrainFile) && is_file($std_innerBrainFile) && ($matrix_manual!="")){
  if (!is_file($matrix_innerBrain)){  
 $amiraHx="# Amira Script

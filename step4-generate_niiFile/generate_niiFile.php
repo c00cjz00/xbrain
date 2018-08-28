@@ -4,8 +4,8 @@ $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$innerBrainFile="../../demoData/20170728_33_04_Resample_4_4_4_innerBrain.am"; 
-$std_innerBrainFile="../../demoData/Std_innerBrain.am";
+$innerBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am"; 
+$std_innerBrainFile="../../demoData/stdBrain/Std_innerBrain.am";
 
 if (isset($argv[1])) $innerBrainFile=$argv[1]; 
 if (isset($argv[2])) $std_innerBrainFile=$argv[2]; 
@@ -32,12 +32,14 @@ $amiraHx="# Amira Script
 source $dirBin/generate_niiFile.hx
 niiGeneration $saveDir $innerBrainFile $std_innerBrainFile $innerBrainFile_doc $matrix
 #sleep 10000
-#exit
+exit
 ";
   $prgfile_hx = tempnam("/tmp", "warping_"); $fp = fopen($prgfile_hx, "w"); fwrite($fp, $amiraHx); fclose($fp); echo $prgfile_hx;
 
   exec("vglrun ".$amiraBin." ".$prgfile_hx);
   unlink($prgfile_hx);
+  sleep(5);
+  exec("gzip ".$saveDir."/*nii");
  }
 }
 ?>
