@@ -1,20 +1,22 @@
 <?php
-## Command ##
-/*
+/*** 
+Example:
+php php niiFile_warping.php
+or 
 php niiFile_warping.php \
-/disk4/work/201707_output/20170730_43_01_Resample_4_4_4_brain.am \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_affine.nii.gz \
 1
-*/
+***/
 
 ## Configure ##
 $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 $cmtkDir=dirname($dirBin)."/../cmtk/bin";
 date_default_timezone_set("Asia/Taipei"); $date= date("YmdHis");
-$key="/tmp/".$date;
-
+$key="/tmp/".$date;  
+  
 ## Input data ##
-$innerBrainFile_nii="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain_affine.nii.gz"; 
+$innerBrainFile_nii="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_affine.nii.gz"; 
 $level=1;
 
 ## input parameter ##

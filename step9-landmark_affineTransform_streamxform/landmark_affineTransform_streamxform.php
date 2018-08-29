@@ -1,9 +1,11 @@
 <?php
 ## command ##
 /*
-php landmark_affineTransform_streamxform.php \ 
-../../demoData/linesetFile/20170728_33_02_innerBrain_point.txt \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.affineMatrix \
+php landmark_affineTransform_streamxform.php
+or 
+php landmark_affineTransform_streamxform.php \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_landmark.txt \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.affineMatrix \
 1
 */
 ## Configure ##
@@ -11,12 +13,12 @@ $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$pointFile="../../demoData/linesetFile/20170728_33_02_innerBrain_point.txt";
-$matrixFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.affineMatrix"; 
+$pointFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_landmark.txt";
+$matrixFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.affineMatrix"; 
 $level=1;
 
 ## input parameter ##
-if (isset($argv[1])) $linesetFile_affine=$argv[1]; 
+if (isset($argv[1])) $pointFile=$argv[1]; 
 if (isset($argv[2])) $matrixFile=$argv[2]; 
 if (isset($argv[3])) $level=$argv[3]; 
 
@@ -30,8 +32,8 @@ $levelDir=$saveDir."/0-nonrigid/level-0".$level.".list";
 
 ## outputFile ##
 $landmarkFile=$pointFile.".am";
-$linesetAffineTransformFile=$landmarkFile."_affine";
-$linesetAffineTransform_WarpFile=$landmarkFile."_affine_warp";
+$linesetAffineTransformFile=$pointFile."_affine.am";
+$linesetAffineTransform_WarpFile=$pointFile."_affine_warp".$level.".am";
 
 if (is_file($linesetAffineTransform_WarpFile)) {
 echo $linesetAffineTransform_WarpFile."\n";

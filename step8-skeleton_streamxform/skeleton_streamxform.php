@@ -1,9 +1,11 @@
 <?php
 ## command ##
 /*
+php skeleton_streamxform.php
+or
 php skeleton_streamxform.php \
-../../demoData/linesetFile/20170728_33_02_innerBrain_lineset_affine.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain_affine.box \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_lineset_affine.am  \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_affine.box \
 1
 */
 
@@ -12,8 +14,8 @@ $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$linesetFile_affine="../../demoData/linesetFile/20170728_33_02_innerBrain_lineset_affine.am";
-$boxFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain_affine.box";
+$linesetFile_affine="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_lineset_affine.am";
+$boxFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_affine.box";
 $level=1;
    
 

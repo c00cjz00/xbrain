@@ -3,9 +3,12 @@
 Example: 
 php tranformBrainManual.php
 or  
-php tranformBrainManual.php ../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am ../../demoData/stdBrain/Std_fullBrain.am 22 2
+php tranformBrainManual.php \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4.am \
+../../demoData/stdBrain/Std_fullBrain.am \
+22 2
 ***/
-$brainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am"; 
+$brainFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4.am"; 
 $stdFile="../../demoData/stdBrain/Std_fullBrain.am";
 $n1=22; $n2=1; 
 

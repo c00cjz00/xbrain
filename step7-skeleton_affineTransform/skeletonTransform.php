@@ -1,9 +1,11 @@
 <?php
 ### command ###
 /*
+php php skeletonTransform.php
+or
 php skeletonTransform.php \
-.../../demoData/linesetFile/20170728_33_02_innerBrain_lineset.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.affineMatrix
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_lineset.am  \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.affineMatrix
 */
 
 ## Configure ##
@@ -11,8 +13,8 @@ $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$linesetFile="../../demoData/linesetFile/20170728_33_02.am";
-$matrixFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.affineMatrix"; 
+$linesetFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_lineset.am";
+$matrixFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.affineMatrix"; 
 
 ## input parameter ##
 if (isset($argv[1])) $linesetFile=$argv[1]; 

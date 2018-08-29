@@ -1,14 +1,22 @@
 <?php
-#cmd:
-#cmd: php5 1-lsmReleaseChannel.php /flycircuit_3/sourceData/dataFlyDriver/GR-F-000009.lsm
-#cmd: [auto] can be replaced by 1000 or 0.5
+/*** 
+Example: 
+php snapshot.php
+or  
+php snapshot.php \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4.am \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am \
+../../demoData/stdBrain/Std_fullBrain.am \
+../../demoData/stdBrain/Std_innerBrain.am
+***/
+
 ## Configure ##
 $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$fullBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am"; 
-$innerBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am"; 
+$fullBrainFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4.am"; 
+$innerBrainFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am"; 
 $std_fullBrainFile="../../demoData/stdBrain/Std_fullBrain.am";
 $std_innerBrainFile="../../demoData/stdBrain/Std_innerBrain.am";
 

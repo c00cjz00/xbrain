@@ -1,6 +1,7 @@
 <?php
-include(dirname(__FILE__)."/config.php");
 $dirBin=dirname(__FILE__);
+include(dirname($dirBin)."/config.php");
+ 
 //$dataDir=$imgSource;
 //$resultDir=$resultSource;
 $linesetTransformFile=$argv[1];

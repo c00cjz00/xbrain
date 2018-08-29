@@ -3,13 +3,14 @@
 Example:
 php affineRegister.php
 or
+cd step3-inital_affineRegister
 php affineRegister.php \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.manualMatrix \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4.am \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4.manualMatrix \
 ../../demoData/stdBrain/Std_fullBrain.am \
 ../../demoData/stdBrain/Std_innerBrain.am \
-0 ## 1 -> full brain 直接使用 manual matrix 不再對位
+1 ## 1 -> full brain 直接使用 manual matrix 不再對位  0 ->從新對位
 ***/
 
 
@@ -18,10 +19,10 @@ $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$fullBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am"; 
-$innerBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am"; 
+$fullBrainFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4.am"; 
+$innerBrainFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am"; 
 $matrix_manual="";
-$matrixFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.manualMatrix"; 
+$matrixFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4.manualMatrix"; 
 $std_fullBrainFile="../../demoData/stdBrain/Std_fullBrain.am";
 $std_innerBrainFile="../../demoData/stdBrain/Std_innerBrain.am";
 $isDirectUsingManualMatrix=0;

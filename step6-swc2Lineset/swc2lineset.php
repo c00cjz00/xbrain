@@ -1,9 +1,11 @@
 <?php
-## Command ##
-/*
+/*** 
+Example:
+php php swc2lineset.php
+or 
 php swc2lineset.php \
-../../demoData/swcFile/20170728_33_02.swc \
-.../../demoData/linesetFile/20170728_33_02_innerBrain_lineset.am \
+../../demoData/swcFile/20170804_4_07.swc \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_lineset.am 
 */
 
 
@@ -13,7 +15,7 @@ include(dirname($dirBin)."/config.php");
 
 ## Input data ##
 $swcFile="../../demoData/swcFile/20170728_33_02.swc"; 
-$linesetFile=".../../demoData/linesetFile/20170728_33_02_innerBrain_lineset.am";
+$linesetFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_lineset.am";
 
 
 ## input parameter ##

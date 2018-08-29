@@ -1,10 +1,19 @@
 <?php
+/*** 
+Example: 
+php generate_niiFile.php
+or
+php generate_niiFile.php  \
+../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am \
+../../demoData/stdBrain/Std_innerBrain.am
+***/
+
 ## Configure ##
 $dirBin=dirname(__FILE__);
 include(dirname($dirBin)."/config.php");
 
 ## Input data ##
-$innerBrainFile="../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am"; 
+$innerBrainFile="../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am"; 
 $std_innerBrainFile="../../demoData/stdBrain/Std_innerBrain.am";
 
 if (isset($argv[1])) $innerBrainFile=$argv[1]; 

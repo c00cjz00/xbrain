@@ -18,7 +18,6 @@ if (!isset($argv[1])) {
  $tmpFile=realpath($argv[1]);
 }
 
-if (isset($argv[2])) $resize=$argv[2];
 
 if (substr($tmpFile,-6,6)==".am.gz") {
  $neuronFileA=substr($tmpFile,0,-3);
@@ -32,7 +31,9 @@ if (substr($tmpFile,-6,6)==".am.gz") {
  echo "enter right neuronFile\n"; exit();
 }
 
-$neuronFileB=substr($neuronFileA,0,-3).".".$resize."_".$resize."_".$resize.".am";
+//$neuronFileB=substr($neuronFileA,0,-3).".".$resize."_".$resize."_".$resize.".am";
+$neuronFileB=$argv[2];
+if (isset($argv[3])) $resize=$argv[3];
 if (!is_file($neuronFileB) && is_file($neuronFileA)){
  $script.="
   avizo2amira \"$neuronFileA\" \"$neuronFileB\"
@@ -50,9 +51,9 @@ if ($script!=""){
   Resample fire
   Resample filter setIndex 0 4
   Resample mode setValue 1
-  Resample voxelSize setValue 0 2
-  Resample voxelSize setValue 1 2
-  Resample voxelSize setValue 2 2
+  Resample voxelSize setValue 0 ".$resize."
+  Resample voxelSize setValue 1 ".$resize."
+  Resample voxelSize setValue 2 ".$resize."
   Resample applyTransformToResult 1
   Resample action touch
   Resample action setValue hit 1
