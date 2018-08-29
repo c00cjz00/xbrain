@@ -126,6 +126,15 @@ php landmark_affineTransform_streamxform.php \
 ../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_landmark.txt_affine.am
 ../../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_landmark.txt_affine_warp.am
 
+### 步驟10
+## 自訂landmark 線性與非線性轉換
+cd sstep10-userLandmark_affineTransform_streamxform
+php landmark_affineTransform_streamxform.php \
+20170804_4_07 \
+/tmp/landmark.txt
+## 輸出
+/tmp/landmark.txt_affine.am
+/tmp/landmark.txt_affine_warp1.am
 
 
 
