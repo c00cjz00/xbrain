@@ -7,10 +7,9 @@ rm  */*/*/*~
 #echo 1 > README.md
 git config --global user.name "c00cjz00"
 git config --global user.email summerhill001@gmail.com
-git pull
+#git pull
 git checkout master
 git add *
-git rm -r step1-avizo2amira2
 git commit -m "init"
 # 上傳至遠端
 git push origin master
