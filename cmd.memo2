@@ -12,8 +12,9 @@ amira file format / resampled file
 
 ### 步驟二
 ## 手動對位腦程式
+cd step2-tranformBrainManual
 php tranformBrainManual.php \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4.am \
 ../../demoData/stdBrain/Std_fullBrain.am \
 22 2
 ## 輸出
@@ -21,22 +22,24 @@ php tranformBrainManual.php \
 
 ### 步驟三.1
 ## 利用帶入外腦的對位的結果, 對腦內腦程式
+cd step3-inital_affineRegister
 php affineRegister.php \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.manualMatrix \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4.am \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4.manualMatrix \
 ../../demoData/stdBrain/Std_fullBrain.am \
 ../../demoData/stdBrain/Std_innerBrain.am \
-0 
+1 
 ## 輸出
 20170728_33_02_Resample_4_4_4.affineMatrix
 20170728_33_02_Resample_4_4_4_innerBrain.affineMatrix
 
 ### 步驟三.2
 ## 拍圖
+cd step3-inital_affineRegister
 php snapshot.php \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4.am \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am \
 ../../demoData/stdBrain/Std_fullBrain.am \
 ../../demoData/stdBrain/Std_innerBrain.am
 ## 輸出
@@ -55,8 +58,9 @@ php snapshot.php \
 
 ### 步驟四
 ## 產生非線性對位所需要的nii格式檔案
+cd step4-generate_niiFile
 php generate_niiFile.php  \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.am \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.am \
 ../../demoData/stdBrain/Std_innerBrain.am
 ## 輸出
 20170728_33_02_Resample_4_4_4_innerBrain_affine_std.nii.gz
@@ -66,16 +70,18 @@ php generate_niiFile.php  \
 
 ### 步驟五
 ## 進行內腦nii檔案 非線性對位
+cd step5-niiFile_warping
 php niiFile_warping.php \
 /disk4/work/201707_output/20170730_43_01_Resample_4_4_4_brain.am \
-1
+2
 ## 輸出
 0-affine
 0-nonrigid
-20170728_33_02_Resample_4_4_4_innerBrain_affine_warp1.nii.gz
+20170728_33_02_Resample_4_4_4_innerBrain_affine_warp2.nii.gz
 
 ### 步驟六 (可省略)
 ## swc 2 lineset format
+cd step6-swc2Lineset
 php swc2lineset.php \
 ../../demoData/swcFile/20170728_33_02.swc \
 .../../demoData/linesetFile/20170728_33_02_innerBrain_lineset.am
@@ -84,26 +90,29 @@ php swc2lineset.php \
 
 ### 步驟七
 ## lineset線性轉換
+cd step7-skeleton_affineTransform
 php skeletonTransform.php \
 .../../demoData/linesetFile/20170728_33_02_innerBrain_lineset.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.affineMatrix
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.affineMatrix
 ## 輸出
 20170728_33_02_innerBrain_lineset_affine.am
 
 ### 步驟八
 ## lineset 非線性轉換
+cd step8-skeleton_streamxform
 php skeleton_streamxform.php \
 ../../demoData/linesetFile/20170728_33_02_innerBrain_lineset_affine.am \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain_affine.box \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain_affine.box \
 1
 ## 輸出
 20170728_33_02_innerBrain_lineset_affine_warp1.am
 
 ### 步驟九
 ## landmark 線性與非線性轉換
+cd step9-landmark_affineTransform_streamxform
 php landmark_affineTransform_streamxform.php \
 ../../demoData/linesetFile/20170728_33_02_innerBrain_point.txt \
-../../demoData/20170728_33_02/20170728_33_02_Resample_4_4_4_innerBrain.affineMatrix \
+/disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.affineMatrix \
 1
 ## 輸出
 20170728_33_02_innerBrain_point.txt.am

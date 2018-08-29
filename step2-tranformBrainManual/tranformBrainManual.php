@@ -18,6 +18,7 @@ if (isset($argv[4])) $n2=$argv[4];
 $brain=basename($brainFile,".am"); 
 $dir=dirname($brainFile);
 $matrix=$dir."/".$brain.".manualMatrix";
+echo $matrix."\n";
 if (!is_file($brainFile) || !is_file($stdFile)){
  echo "brain or std file 不存在\n"; exit();
 }
