@@ -6,7 +6,7 @@
 ### 步驟一
 ## 檔案與倍率轉換
 cd step1-avizo2amira
-php 1-avizo2amira.php [neuron.gz/neuron]
+php avizo2amira.php [neuron.gz/neuron]
 ## 輸出
 amira file format / resampled file
 
