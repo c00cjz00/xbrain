@@ -71,24 +71,24 @@ php niiFile_warping.php $innerBrainFile_affine_nii $warpLevel
 
 ### 步驟六 (可省略)
 ## swc 2 lineset format
-echo cd $DIR/step6-swc2Lineset
-echo php swc2lineset.php $swcFile $linesetFile 
-cd $DIR/step6-swc2Lineset
-php swc2lineset.php $swcFile $linesetFile 
+#echo cd $DIR/step6-swc2Lineset
+#echo php swc2lineset.php $swcFile $linesetFile 
+#cd $DIR/step6-swc2Lineset
+#php swc2lineset.php $swcFile $linesetFile 
 
 ### 步驟七
 ## lineset線性轉換
-echo cd $DIR/step7-skeleton_affineTransform
-echo php skeletonTransform.php $linesetFile  $innerBrain_affineMatrix
-cd $DIR/step7-skeleton_affineTransform
-php skeletonTransform.php $linesetFile  $innerBrain_affineMatrix
+#echo cd $DIR/step7-skeleton_affineTransform
+#echo php skeletonTransform.php $linesetFile  $innerBrain_affineMatrix
+#cd $DIR/step7-skeleton_affineTransform
+#php skeletonTransform.php $linesetFile  $innerBrain_affineMatrix
 
 ### 步驟八
 ## lineset 非線性轉換
-echo cd $DIR/step8-skeleton_streamxform
-echo php skeleton_streamxform.php $linesetFile_affine $innerBrain_affineBox $warpLevel
-cd $DIR/step8-skeleton_streamxform
-php skeleton_streamxform.php $linesetFile_affine $innerBrain_affineBox $warpLevel
+#echo cd $DIR/step8-skeleton_streamxform
+#echo php skeleton_streamxform.php $linesetFile_affine $innerBrain_affineBox $warpLevel
+#cd $DIR/step8-skeleton_streamxform
+#php skeleton_streamxform.php $linesetFile_affine $innerBrain_affineBox $warpLevel
 
 
 ### 步驟九
