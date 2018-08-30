@@ -9,7 +9,7 @@ for($i=$start;$i<$end;$i++){
  $checkFile=substr($tmp,0,-3)."innerBrain_lineset_affine_warp1.am"; 
  if (is_file($tmp) && !is_file($checkFile)){
   $cmd="./cmd1.sh ".$tmp." 1";
-  echo $cmd."\n";
+  echo$i." ". $cmd."\n";
   exec($cmd);
  }
 }

@@ -12,9 +12,8 @@ include(dirname($dirBin)."/config.php");
 ## Input data ##
 
 ## input parameter ##
-if (isset($argv[1])) { $brainName=$argv[1]; } else { echo "error\n"; exit(); } 
+if (isset($argv[1])) { $$matrixFile=$argv[1]; } else { echo "error\n"; exit(); } 
 if (isset($argv[2])) { $pointFile=$argv[2];  } else { echo "error\n"; exit(); } 
-$matrixFile="../../output/".$brainName."/".$brainName."_Resample_4_4_4_innerBrain.affineMatrix"; 
 $level=1;
 
 

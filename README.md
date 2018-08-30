@@ -1,3 +1,19 @@
+## 執行程式 ###
+
+## 執行腦型非線性對位, 並伴隨swc轉換
+./brainWarping_with_swc.sh /disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4.am 1
+
+## 執行腦型非線性對位, 並沒有swc轉換
+./brainWarping_without_swc.sh /disk4/gitHub/output/20170804_4_07/20170804_4_07_Resample_4_4_4.am 1
+
+
+## 只有執行 landmark 轉換
+./transform_landmark.sh ../output/20170804_4_07/20170804_4_07_Resample_4_4_4_innerBrain.affineMatrix /tmp/landmark.txt
+
+
+
+
+### 各步驟程式說明如下
 ### 步驟0
 位置 gitHub/xbrain
 
